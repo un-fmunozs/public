@@ -1,0 +1,49 @@
+### Terminal 
+### IBM Model M 122 - OS X 
+
+ifset set3
+layerblock
+  FN1          1
+  FN2          1      # One for each hand, where available
+  FN1 FN2      2      # Press them both for a hard to reach second layer
+endblock
+
+remapblock
+ifset set3
+layer 0
+  # LCTRL        FN1                # The all important function key
+  PAD_ASTERIX    FN2                # And the second one: currently the same
+  PAD_PLUS       PAD_ENTER          # Puts an enter at the far right edge
+  LALT           LGUI               # Command!
+  # RALT           RGUI               # And again !
+  # LCTRL          LALT
+  # RCTRL          RALT
+  EXTRA_F10      LALT
+  SCROLL_LOCK    PAD_ASTERIX
+  EXTRA_SYSRQ    PAD_MINUS
+  PAD_MINUS      PAD_PLUS
+  PAD_ASTERIX    PAD_PLUS
+  NUM_LOCK       PAD_SLASH
+  ESC            NUM_LOCK
+  EXTRA_F1       ESC
+
+
+  # Hijack the f-keys for media controls
+  # F13            ESC
+  F16            MEDIA_VOLUME_DOWN  # Volume
+  F17            MEDIA_VOLUME_UP
+  F18            MEDIA_PREV_TRACK   # Playback
+  F19            MEDIA_NEXT_TRACK   # 
+  F20            MEDIA_PLAY_PAUSE   # 
+endblock
+
+ifset set3
+macroblock
+  # QtCreator Build & Run 
+  macro EXTRA_F2 
+    MAKE LGUI
+    PRESS R
+    BREAK LGUI
+  endmacro
+endblock
+
